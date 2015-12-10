@@ -1,0 +1,12 @@
+<div class="col s12 m5">
+<div class="card-panel teal">
+  <span class="card-title "><p class="center-align"><%=addendum.name%></p></span>
+<ul class="teal darken-2 white-text">
+      <li><%=addendum.description%></li>
+      <%= link_to addendum, remote: true, method: :delete do %>
+      <li><button class="btn waves-effect waves-light ">Delete!</button></li>
+      <% end %>
+      <li><button class="btn waves-effect waves-light "><%= link_to "Download", addendum.addendum.url %></button>
+<ul>
+</div>
+</div>

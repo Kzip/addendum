@@ -1,0 +1,8 @@
+<%= simple_form_for @task, remote: true do |f|   %>
+  <%= f.input  :name %>
+  <%= f.input  :description                      %>
+  <%= f.file_field  :cast                         %>
+  <%= f.hidden_field :podpage_id , :value=>params[:podpage_id] %>
+  <%= f.button :submit                           %>
+
+<% end %>

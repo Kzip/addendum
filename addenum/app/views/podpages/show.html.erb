@@ -1,0 +1,20 @@
+<div class="intro cyan accent-4 z-depth-1 ">
+    <h3>Welcome to<%= @ppage.name %></h3>
+    <ul class="teal darken-2 white-text">
+      <li><%= @ppage.description %></li>
+    </ul>
+    <button class="btn waves-effect waves-light white "><%= link_to 'New Podcast', new_podcast_path(:podpage_id=>@ppage.id), remote: true %></button>
+    <button class="btn waves-effect waves-light white"><%= link_to 'Go Back to Dash', users_path %></button>
+
+      <%= form_for :subscription, url: subscriptions_path,class:"btn waves-effect waves-light", remote: true do |i| %>
+      <%=hidden_field_tag(:podpage_id, @ppage.id) %>
+      <%= i.submit %>
+      <% end%>
+
+</div>
+  <div class="container">
+    <div class ='row'>
+        <div class="test" id="tasks"><%= render @tasks %></div>
+    </div>
+    <div id="podcast-form" style="display:none;"></div>
+</div>

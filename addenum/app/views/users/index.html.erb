@@ -1,0 +1,30 @@
+
+
+
+<div class="intro cyan accent-4 z-depth-1 ">
+
+    <%= image_tag("Addendum_sm.png",class: 'valign', :alt => "rss feed") %>
+    <h5>Welcome back <%= User.find_by(id: session[:user_id]).name%></h5>
+    
+    <%= link_to "Log out", session_path(session[:user_id]), class:" btn-large waves-effect waves-light right-align",:method => :delete %>
+</div>
+<div class="container">
+
+
+    <div class="col s12 m4 l4">
+      <div class="orange accent-1">
+        <h3 class ="center-align">All PodLists</h3>
+          <a class="waves-effect waves-light btn-large " id="heck" href='/podpages/new'> Click to make a new Podlisting</a>
+      </div>
+    </div>
+
+<div class="row">
+  <div class="pagelist" id="podpages"><%= render @pages %></div>
+</div>
+  <div class="col s12 m4 l4">
+    <h3 class ="center-align">Your Subscribed PodLists</h3>
+    <div class="row">
+      <%= render @yours %>
+    </div>
+  </div>
+</div>

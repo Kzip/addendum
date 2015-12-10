@@ -1,0 +1,8 @@
+<%= simple_form_for @add, remote: true do |f|   %>
+  <%= f.input  :name %>
+  <%= f.input  :description                      %>
+  <%= f.file_field  :addendum                        %>
+  <%= f.hidden_field :podcast_id , :value=>params[:podcast_id] %>
+  <%= f.button :submit                           %>
+
+<% end %>

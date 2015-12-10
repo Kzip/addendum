@@ -1,0 +1,26 @@
+<div class="intro cyan accent-4 z-depth-1 ">
+<h3><%= @pcast.name %></h3>
+<ul class="teal darken-2 white-text">
+<li><%= @pcast.description %></li>
+<li><%= @pcast.id %></li>
+</ul>
+<button class="btn waves-effect waves-light white "><%= link_to 'New Addendum', new_addendum_path(:podcast_id=>@pcast.id), remote: true %></button>
+<button class="btn waves-effect waves-light white "><%= link_to 'Back to Podpage', podpage_path(:id=>@pcast.podpage_id) %></button>
+<button class="btn waves-effect waves-light white "><%= link_to "Download", @pcast.cast.url %></button>
+</div>
+
+<div id="add-form" style="display:none;"></div>
+
+<section id="audio">
+  <audio controls>
+    <source src='<%=@pcast.cast.url%>' type="audio/ogg">
+    <source src='<%=@pcast.cast.url%>' type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+</section>
+<h3>Addendums</h3>
+<div class="container">
+  <div class ='row'>
+      <div class="test" id="tasks"><%= render @adds %></div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="col s12 m5">
+ <div class="card-panel teal">
+  <div class="card-content white-text">
+    <span class="card-title "><p class="center-align">
+    <%=podcast.name%></p></span>
+    <ul class="teal darken-2 white-text">
+    <li><%=podcast.description%></li>
+
+    </ul>
+  </div>
+  <div class="card-action">
+    <div class="row">
+    <ul id="dropdown2" class="dropdown-content">
+    <li><button class="btn waves-effect waves-light "><%= link_to "Download", podcast.cast.url %></button></li>
+      <li><%= link_to podcast, remote: true, method: :delete do %>
+    <button class="btn waves-effect waves-light">Delete!</button>
+    <% end %></li>
+    <li><%= link_to podcast_path(podcast.id) do %>
+    <button class="btn waves-effect waves-light">View</button>
+    <% end %></li>
+    </ul>
+    <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Actions<i class="mdi-navigation-arrow-drop-down right"></i></a>
+    </div>
+  </div>
+ </div>
+</div>
